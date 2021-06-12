@@ -12,6 +12,7 @@
 
 ;; AucTeX
 (setq TeX-auto-save t)
+(setq TeX-PDF-mode t)
 ;; (setq TeX-parse-self t)
 ;; (setq-default TeX-master nil)
 ;; (add-hook 'LaTeX-mode-hook 'visual-line-mode)
@@ -19,13 +20,12 @@
 ;; (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 ;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 
-(setq TeX-source-correlate-mode t)
-;; (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 (setq TeX-source-correlate-start-server t)
 (setq TeX-source-correlate-method 'synctex)
 
 ;; (setq reftex-plug-into-AUCTeX t)
-(setq TeX-PDF-mode t)
+
 
 ;; Use Skim as viewer, enable source <-> PDF sync
 ;; make latexmk available via C-c C-c
