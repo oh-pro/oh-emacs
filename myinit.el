@@ -1,4 +1,5 @@
 (setq auto-save-default nil)
+(setq make-backup-files nil)
 
 ;; recentf stuff
 (recentf-mode 1)
@@ -29,21 +30,25 @@
 	("C-c l" . TeX-error-overview))
 
   :config
+  ;; basic configuration
+  (setq TeX-auto-save t)
+  (setq TeX-save-query nil)
+  ;; (setq TeX-parse-self t)
   (setq TeX-PDF-mode t)
+  ;; (setq-default TeX-master t)
 
-  (add-hook 'LaTeX-mode-hook
-	    (lambda ()
-	      (push
-	       '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
-		 :help "Run latexmk on file")
-	       TeX-command-list)))
-  (add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
+  ;; start reftex-mode
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (setq reftex-plug-into-AUCTeX t)
 
-  (setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
-  (setq TeX-view-program-list
-	'(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+  ;; enable source specials or SyncTeX to be enable to compile it to a forward / backword searching.
+  (add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 
-  (setq TeX-source-correlate-method 'synctex)
-  (setq TeX-source-correlate-mode t)
+  ;; always start emacs server when viewing in evance for backward search
   (setq TeX-source-correlate-start-server t)
+
+  ;; set preview programs
+  (setq TeX-view-program-selection '((output-pdf "Skim")))
+  (setq TeX-view-program-list
+	'(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
   )
