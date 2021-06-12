@@ -5,6 +5,13 @@
 (setq recentf-max-menu-items 25)
 (global-set-key (kbd "<f1>") 'recentf-open-files)
 
+;; Use cmd key for meta
+;; https://superuser.com/questions/297259/set-emacs-meta-key-to-be-the-mac-key
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'super)
+
 ;; C-c C-, e m
 (add-to-list 'org-structure-template-alist '("emacs" . "src emacs-lisp"))
 
@@ -36,8 +43,7 @@
   (setq TeX-view-program-list
 	'(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
 
-  (custom-set-variables
-   '(TeX-source-correlate-method 'synctex)
-   '(TeX-source-correlate-mode t)
-   '(TeX-source-correlate-start-server t))
+  (setq TeX-source-correlate-method 'synctex)
+  (setq TeX-source-correlate-mode t)
+  (setq TeX-source-correlate-start-server t)
   )
