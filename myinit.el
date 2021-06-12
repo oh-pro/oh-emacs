@@ -48,7 +48,7 @@
   (setq TeX-source-correlate-start-server t)
 
   ;; set preview programs
-  (setq TeX-view-program-selection '((output-pdf "Skim")))
   (setq TeX-view-program-list
 	'(("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
+  (setq TeX-view-program-selection '((output-pdf "Skim")))
   )
