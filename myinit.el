@@ -13,6 +13,24 @@
       mac-command-modifier 'meta
       mac-option-modifier 'super)
 
+(use-package windresize
+  :defer t
+  :bind
+  ("C-c w" . windresize)
+  )
+
+(use-package switch-window
+  :ensure t
+  :config
+  (setq switch-window-input-style 'minibuffer)
+  (setq switch-window-increase 4)
+  (setq switch-window-threshold 2)
+  (setq switch-window-shortcut-style 'qwerty)
+  (setq switch-window-qwerty-shortcuts
+	'("a" "s" "d" "f"))
+  :bind
+  ([remap other-window] . switch-window))
+
 ;; C-c C-, e m
 (add-to-list 'org-structure-template-alist '("emacs" . "src emacs-lisp"))
 
