@@ -1,5 +1,3 @@
-- Last Update : [2021-06-13 Sun]
-
 * Emacs Basic Configuration
 
 #+begin_src emacs-lisp
