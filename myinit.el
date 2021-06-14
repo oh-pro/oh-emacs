@@ -34,15 +34,6 @@
 ;; C-c C-, e m
 (add-to-list 'org-structure-template-alist '("emacs" . "src emacs-lisp"))
 
-(use-package pdf-tools
-  :pin manual
-  :config
-  (pdf-tools-install)
-  (setq-default pdf-view-display-size 'fit-width)
-  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
-  :custom
-  (pdf-annot-activate-created-annotations t "automatically annotate highlights"))
-
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/texlive/2021/bin/universal-darwin"))
 
 (use-package latex
