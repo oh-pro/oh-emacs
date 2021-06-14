@@ -44,7 +44,6 @@
   (add-to-list 'org-structure-template-alist '("emacs" . "src emacs-lisp"))
 #+end_src
 
-
 * Latex with Auctex and Skim
 
 #+begin_src emacs-lisp
