@@ -82,4 +82,3 @@
     (setq TeX-view-program-selection '((output-pdf "Skim")))
     )
 #+end_src
-
